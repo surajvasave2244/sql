@@ -1,0 +1,305 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.34 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| ashh               |
+| college            |
+| cricket            |
+| dairy              |
+| details            |
+| easy               |
+| emp                |
+| emp1               |
+| emp_db             |
+| emp_db2            |
+| equi               |
+| forms              |
+| groovingsync       |
+| id                 |
+| information_schema |
+| joins              |
+| kratos             |
+| mansi              |
+| mysql              |
+| new_schema         |
+| nike               |
+| pb1                |
+| performance_schema |
+| practise           |
+| prashant007        |
+| prashantcare       |
+| prashantcustomer1  |
+| prashantcustomer2  |
+| prashantdb1        |
+| prathamesh         |
+| project            |
+| q1                 |
+| sales              |
+| sam                |
+| sample_db          |
+| samuel             |
+| saurabh            |
+| saurabhh           |
+| schema             |
+| school             |
+| series             |
+| shield             |
+| shra26             |
+| shraddha           |
+| t202               |
+| test1              |
+| world              |
++--------------------+
+48 rows in set (0.00 sec)
+
+mysql> use t202;
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_t202 |
++----------------+
+| emp            |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> create table t202(id int, name varchar(12),branch varchar(12),marks float);
+Query OK, 0 rows affected (0.35 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_t202 |
++----------------+
+| emp            |
+| t202           |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> use t202;
+Database changed
+mysql> desc t202;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | YES  |     | NULL    |       |
+| name   | varchar(12) | YES  |     | NULL    |       |
+| branch | varchar(12) | YES  |     | NULL    |       |
+| marks  | float       | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into t202 (id, name,branch,marks) values(1, 'suraj','comp',67.87);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into t202 (id, name,branch,marks) values(2, 'Bhavya','IT',58.63);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into t202 (id, name,branch,marks) values(2, 'Bhavya','IT',58);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into t202 (id, name,branch,marks) values(4, 'jivesh','civil',78.25);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from t202;
++------+--------+--------+-------+
+| id   | name   | branch | marks |
++------+--------+--------+-------+
+|    1 | suraj  | comp   | 67.87 |
+|    2 | Bhavya | IT     | 58.63 |
+|    2 | Bhavya | IT     |    58 |
+|    4 | jivesh | civil  | 78.25 |
++------+--------+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> intert into t202(id , name, branch,marks)values(5,'vivek',"chandan",77),(6,"shubham","ETC",95.33);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'intert into t202(id , name, branch,marks)values(5,'vivek',"chandan",77),(6,"shub' at line 1
+mysql> intert into t202(id , name, branch,marks)values(5,"vivek","chandan",77),(6,"shubham","ETC",95.33);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'intert into t202(id , name, branch,marks)values(5,"vivek","chandan",77),(6,"shub' at line 1
+mysql> insert into t202(id , name, branch,marks)values(5,"vivek","chandan",77),(6,"shubham","ETC",95.33);
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into t202(id , name, branch,marks)values(7,"Amar","CHEM",66.9);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from t202;
++------+---------+---------+-------+
+| id   | name    | branch  | marks |
++------+---------+---------+-------+
+|    1 | suraj   | comp    | 67.87 |
+|    2 | Bhavya  | IT      | 58.63 |
+|    2 | Bhavya  | IT      |    58 |
+|    4 | jivesh  | civil   | 78.25 |
+|    5 | vivek   | chandan |    77 |
+|    6 | shubham | ETC     | 95.33 |
+|    7 | Amar    | CHEM    |  66.9 |
++------+---------+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> insert into t202(id , name, branch,marks)values(8,'anuj',"Elec",77.5);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from t202;
++------+---------+---------+-------+
+| id   | name    | branch  | marks |
++------+---------+---------+-------+
+|    1 | suraj   | comp    | 67.87 |
+|    2 | Bhavya  | IT      | 58.63 |
+|    2 | Bhavya  | IT      |    58 |
+|    4 | jivesh  | civil   | 78.25 |
+|    5 | vivek   | chandan |    77 |
+|    6 | shubham | ETC     | 95.33 |
+|    7 | Amar    | CHEM    |  66.9 |
+|    8 | anuj    | Elec    |  77.5 |
++------+---------+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select id,name from t202;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | suraj   |
+|    2 | Bhavya  |
+|    2 | Bhavya  |
+|    4 | jivesh  |
+|    5 | vivek   |
+|    6 | shubham |
+|    7 | Amar    |
+|    8 | anuj    |
++------+---------+
+8 rows in set (0.00 sec)
+
+mysql> insert into t202(id , name, branch,marks)values(9,'vira',"Elec",78.5);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from t202;
++------+---------+---------+-------+
+| id   | name    | branch  | marks |
++------+---------+---------+-------+
+|    1 | suraj   | comp    | 67.87 |
+|    2 | Bhavya  | IT      | 58.63 |
+|    2 | Bhavya  | IT      |    58 |
+|    4 | jivesh  | civil   | 78.25 |
+|    5 | vivek   | chandan |    77 |
+|    6 | shubham | ETC     | 95.33 |
+|    7 | Amar    | CHEM    |  66.9 |
+|    8 | anuj    | Elec    |  77.5 |
+|    9 | vira    | Elec    |  78.5 |
++------+---------+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> select * from t202 where branch='elec';
++------+------+--------+-------+
+| id   | name | branch | marks |
++------+------+--------+-------+
+|    8 | anuj | Elec   |  77.5 |
+|    9 | vira | Elec   |  78.5 |
++------+------+--------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select id,name,marks from t202 where branch='comp';
++------+-------+-------+
+| id   | name  | marks |
++------+-------+-------+
+|    1 | suraj | 67.87 |
++------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select id,name,marks from t202 where branch<>'comp';
++------+---------+-------+
+| id   | name    | marks |
++------+---------+-------+
+|    2 | Bhavya  | 58.63 |
+|    2 | Bhavya  |    58 |
+|    4 | jivesh  | 78.25 |
+|    5 | vivek   |    77 |
+|    6 | shubham | 95.33 |
+|    7 | Amar    |  66.9 |
+|    8 | anuj    |  77.5 |
+|    9 | vira    |  78.5 |
++------+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select * from t202 where branch !='comp';
++------+---------+---------+-------+
+| id   | name    | branch  | marks |
++------+---------+---------+-------+
+|    2 | Bhavya  | IT      | 58.63 |
+|    2 | Bhavya  | IT      |    58 |
+|    4 | jivesh  | civil   | 78.25 |
+|    5 | vivek   | chandan |    77 |
+|    6 | shubham | ETC     | 95.33 |
+|    7 | Amar    | CHEM    |  66.9 |
+|    8 | anuj    | Elec    |  77.5 |
+|    9 | vira    | Elec    |  78.5 |
++------+---------+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select * from t202 where branch <>'comp';
++------+---------+---------+-------+
+| id   | name    | branch  | marks |
++------+---------+---------+-------+
+|    2 | Bhavya  | IT      | 58.63 |
+|    2 | Bhavya  | IT      |    58 |
+|    4 | jivesh  | civil   | 78.25 |
+|    5 | vivek   | chandan |    77 |
+|    6 | shubham | ETC     | 95.33 |
+|    7 | Amar    | CHEM    |  66.9 |
+|    8 | anuj    | Elec    |  77.5 |
+|    9 | vira    | Elec    |  78.5 |
++------+---------+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select * from t202;
++------+---------+---------+-------+
+| id   | name    | branch  | marks |
++------+---------+---------+-------+
+|    1 | suraj   | comp    | 67.87 |
+|    2 | Bhavya  | IT      | 58.63 |
+|    2 | Bhavya  | IT      |    58 |
+|    4 | jivesh  | civil   | 78.25 |
+|    5 | vivek   | chandan |    77 |
+|    6 | shubham | ETC     | 95.33 |
+|    7 | Amar    | CHEM    |  66.9 |
+|    8 | anuj    | Elec    |  77.5 |
+|    9 | vira    | Elec    |  78.5 |
++------+---------+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> selct
+    ->
+    ->
+    ->
+    -> select * from t202 where name <='suraj';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct
+
+
+
+select * from t202 where name <='suraj'' at line 1
+mysql> select * from t202 where name <'suraj';
++------+---------+--------+-------+
+| id   | name    | branch | marks |
++------+---------+--------+-------+
+|    2 | Bhavya  | IT     | 58.63 |
+|    2 | Bhavya  | IT     |    58 |
+|    4 | jivesh  | civil  | 78.25 |
+|    6 | shubham | ETC    | 95.33 |
+|    7 | Amar    | CHEM   |  66.9 |
+|    8 | anuj    | Elec   |  77.5 |
++------+---------+--------+-------+
+6 rows in set (0.00 sec)
+
+mysql>

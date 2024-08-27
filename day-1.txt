@@ -1,0 +1,675 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.34 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| ashh               |
+| college            |
+| cricket            |
+| dairy              |
+| details            |
+| easy               |
+| emp                |
+| emp1               |
+| emp_db             |
+| emp_db2            |
+| equi               |
+| forms              |
+| groovingsync       |
+| id                 |
+| information_schema |
+| joins              |
+| kratos             |
+| mansi              |
+| mysql              |
+| new_schema         |
+| nike               |
+| pb1                |
+| performance_schema |
+| practise           |
+| prashant007        |
+| prashantcare       |
+| prashantcustomer1  |
+| prashantcustomer2  |
+| prashantdb1        |
+| prathamesh         |
+| project            |
+| q1                 |
+| sales              |
+| sam                |
+| sample_db          |
+| samuel             |
+| saurabh            |
+| saurabhh           |
+| schema             |
+| school             |
+| series             |
+| shield             |
+| shra26             |
+| shraddha           |
+| t202               |
+| test1              |
+| world              |
++--------------------+
+48 rows in set (0.00 sec)
+
+mysql> use t202;
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_t202 |
++----------------+
+| t202           |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> desc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desc
+    -> describe t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'describe t202' at line 2
+mysql> create table t202(id int,name varchar(10),branch varchar(5),marks float);
+ERROR 1050 (42S01): Table 't202' already exists
+mysql> describe t202;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | YES  |     | NULL    |       |
+| Name   | varchar(10) | YES  |     | NULL    |       |
+| Branch | varchar(5)  | YES  |     | NULL    |       |
+| Marks  | float       | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> create table emp;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> show databses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databses' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| ashh               |
+| college            |
+| cricket            |
+| dairy              |
+| details            |
+| easy               |
+| emp                |
+| emp1               |
+| emp_db             |
+| emp_db2            |
+| equi               |
+| forms              |
+| groovingsync       |
+| id                 |
+| information_schema |
+| joins              |
+| kratos             |
+| mansi              |
+| mysql              |
+| new_schema         |
+| nike               |
+| pb1                |
+| performance_schema |
+| practise           |
+| prashant007        |
+| prashantcare       |
+| prashantcustomer1  |
+| prashantcustomer2  |
+| prashantdb1        |
+| prathamesh         |
+| project            |
+| q1                 |
+| sales              |
+| sam                |
+| sample_db          |
+| samuel             |
+| saurabh            |
+| saurabhh           |
+| schema             |
+| school             |
+| series             |
+| shield             |
+| shra26             |
+| shraddha           |
+| t202               |
+| test1              |
+| world              |
++--------------------+
+48 rows in set (0.00 sec)
+
+mysql> use t202;
+Database changed
+mysql> create table emp;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table emp(id int,name varchar(33),dept varchar(12),salary int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_t202 |
++----------------+
+| emp            |
+| t202           |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> describe emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | YES  |     | NULL    |       |
+| name   | varchar(33) | YES  |     | NULL    |       |
+| dept   | varchar(12) | YES  |     | NULL    |       |
+| salary | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | YES  |     | NULL    |       |
+| name   | varchar(33) | YES  |     | NULL    |       |
+| dept   | varchar(12) | YES  |     | NULL    |       |
+| salary | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> Enter password: ****
+    -> Welcome to the MySQL monitor.  Commands end with ; or \g.
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Enter password: ****
+Welcome to the MySQL monitor.  Commands end with' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'or' at line 1
+    -> Your MySQL connection id is 10
+    -> Server version: 8.0.34 MySQL Community Server - GPL
+    ->
+    -> Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+    ->
+    -> Oracle is a registered trademark of Oracle Corporation and/or its
+    -> affiliates. Other names may be trademarks of their respective
+    -> owners.
+    ->
+    -> Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    ->
+    -> mysql> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.
+Your MySQL connection id is 10
+Server version: 8.0.34 MySQL Community Server -' at line 1
+mysql> +--------------------+
+    -> | Database           |
+    -> +--------------------+
+    -> | abc                |
+    -> | ashh               |
+    -> | college            |
+    -> | cricket            |
+    -> | dairy              |
+    -> | details            |
+    -> | easy               |
+    -> | emp                |
+    -> | emp1               |
+    -> | emp_db             |
+    -> | emp_db2            |
+    -> | equi               |
+    -> | forms              |
+    -> | groovingsync       |
+    -> | id                 |
+    -> | information_schema |
+    -> | joins              |
+    -> | kratos             |
+    -> | mansi              |
+    -> | mysql              |
+    -> | new_schema         |
+    -> | nike               |
+    -> | pb1                |
+    -> | performance_schema |
+    -> | practise           |
+    -> | prashant007        |
+    -> | prashantcare       |
+    -> | prashantcustomer1  |
+    -> | prashantcustomer2  |
+    -> | prashantdb1        |
+    -> | prathamesh         |
+    -> | project            |
+    -> | q1                 |
+    -> | sales              |
+    -> | sam                |
+    -> | sample_db          |
+    -> | samuel             |
+    -> | saurabh            |
+    -> | saurabhh           |
+    -> | schema             |
+    -> | school             |
+    -> | series             |
+    -> | shield             |
+    -> | shra26             |
+    -> | shraddha           |
+    -> | t202               |
+    -> | test1              |
+    -> | world              |
+    -> +--------------------+
+    -> 48 rows in set (0.00 sec)
+    ->
+    -> mysql> use t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+
+| Database           |
++--------------------+
+| abc      ' at line 1
+mysql> Database changed
+    -> mysql> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Database changed
+mysql> show tables' at line 1
+mysql> +----------------+
+    -> | Tables_in_t202 |
+    -> +----------------+
+    -> | t202           |
+    -> +----------------+
+    -> 1 row in set (0.00 sec)
+    ->
+    -> mysql> desc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+----------------+
+| Tables_in_t202 |
++----------------+
+| t202           |
++---' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    -> mysql> desc
+    ->     -> describe t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'the manual that corresponds to your MySQL server version for the right syntax to' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'describe t202' at line 2
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    -> mysql> create table t202(id int,name varchar(10),branch varchar(5),marks float);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'the manual that corresponds to your MySQL server version for the right syntax to' at line 1
+mysql> ERROR 1050 (42S01): Table 't202' already exists
+    -> mysql> describe t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1050 (42S01): Table 't202' already exists
+mysql> describe t202' at line 1
+mysql> +--------+-------------+------+-----+---------+-------+
+    -> | Field  | Type        | Null | Key | Default | Extra |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> | id     | int         | YES  |     | NULL    |       |
+    -> | Name   | varchar(10) | YES  |     | NULL    |       |
+    -> | Branch | varchar(5)  | YES  |     | NULL    |       |
+    -> | Marks  | float       | YES  |     | NULL    |       |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> 4 rows in set (0.01 sec)
+    ->
+    -> mysql> create table emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------+-------------+------+-----+---------+-------+
+| Field  | Type        |' at line 1
+mysql> ERROR 4028 (HY000): A table must have at least one visible column.
+    -> mysql> show databses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> show d' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databses' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    -> mysql> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'the manual that corresponds to your MySQL server version for the right syntax to' at line 1
+mysql> +--------------------+
+    -> | Database           |
+    -> +--------------------+
+    -> | abc                |
+    -> | ashh               |
+    -> | college            |
+    -> | cricket            |
+    -> | dairy              |
+    -> | details            |
+    -> | easy               |
+    -> | emp                |
+    -> | emp1               |
+    -> | emp_db             |
+    -> | emp_db2            |
+    -> | equi               |
+    -> | forms              |
+    -> | groovingsync       |
+    -> | id                 |
+    -> | information_schema |
+    -> | joins              |
+    -> | kratos             |
+    -> | mansi              |
+    -> | mysql              |
+    -> | new_schema         |
+    -> | nike               |
+    -> | pb1                |
+    -> | performance_schema |
+    -> | practise           |
+    -> | prashant007        |
+    -> | prashantcare       |
+    -> | prashantcustomer1  |
+    -> | prashantcustomer2  |
+    -> | prashantdb1        |
+    -> | prathamesh         |
+    -> | project            |
+    -> | q1                 |
+    -> | sales              |
+    -> | sam                |
+    -> | sample_db          |
+    -> | samuel             |
+    -> | saurabh            |
+    -> | saurabhh           |
+    -> | schema             |
+    -> | school             |
+    -> | series             |
+    -> | shield             |
+    -> | shra26             |
+    -> | shraddha           |
+    -> | t202               |
+    -> | test1              |
+    -> | world              |
+    -> +--------------------+
+    -> 48 rows in set (0.00 sec)
+    ->
+    -> mysql> use t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+
+| Database           |
++--------------------+
+| abc      ' at line 1
+mysql> Database changed
+    -> mysql> create table emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Database changed
+mysql> create table emp' at line 1
+mysql> ERROR 4028 (HY000): A table must have at least one visible column.
+    -> mysql> create table emp(id int,name varchar(33),dept varchar(12),salary int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create' at line 1
+mysql> Query OK, 0 rows affected (0.01 sec)
+    ->
+    -> mysql> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables' at line 1
+mysql> +----------------+
+    -> | Tables_in_t202 |
+    -> +----------------+
+    -> | emp            |
+    -> | t202           |
+    -> +----------------+
+    -> 2 rows in set (0.00 sec)
+    ->
+    -> mysql> describe emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+----------------+
+| Tables_in_t202 |
++----------------+
+| emp            |
+| t2' at line 1
+mysql> +--------+-------------+------+-----+---------+-------+
+    -> | Field  | Type        | Null | Key | Default | Extra |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> | id     | int         | YES  |     | NULL    |       |
+    -> | name   | varchar(33) | YES  |     | NULL    |       |
+    -> | dept   | varchar(12) | YES  |     | NULL    |       |
+    -> | salary | int         | YES  |     | NULL    |       |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> 4 rows in set (0.00 sec)
+    ->
+    -> mysql> desc emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------+-------------+------+-----+---------+-------+
+| Field  | Type        |' at line 1
+mysql> +--------+-------------+------+-----+---------+-------+
+    -> | Field  | Type        | Null | Key | Default | Extra |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> | id     | int         | YES  |     | NULL    |       |
+    -> | name   | varchar(33) | YES  |     | NULL    |       |
+    -> | dept   | varchar(12) | YES  |     | NULL    |       |
+    -> | salary | int         | YES  |     | NULL    |       |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> 4 rows in set (0.00 sec)
+    ->
+    -> mysql>Enter password: ****
+    -> Welcome to the MySQL monitor.  Commands end with ; or \g.
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------+-------------+------+-----+---------+-------+
+| Field  | Type        |' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'or' at line 1
+    -> Your MySQL connection id is 10
+    -> Server version: 8.0.34 MySQL Community Server - GPL
+    ->
+    -> Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+    ->
+    -> Oracle is a registered trademark of Oracle Corporation and/or its
+    -> affiliates. Other names may be trademarks of their respective
+    -> owners.
+    ->
+    -> Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    ->
+    -> mysql> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.
+Your MySQL connection id is 10
+Server version: 8.0.34 MySQL Community Server -' at line 1
+mysql> +--------------------+
+    -> | Database           |
+    -> +--------------------+
+    -> | abc                |
+    -> | ashh               |
+    -> | college            |
+    -> | cricket            |
+    -> | dairy              |
+    -> | details            |
+    -> | easy               |
+    -> | emp                |
+    -> | emp1               |
+    -> | emp_db             |
+    -> | emp_db2            |
+    -> | equi               |
+    -> | forms              |
+    -> | groovingsync       |
+    -> | id                 |
+    -> | information_schema |
+    -> | joins              |
+    -> | kratos             |
+    -> | mansi              |
+    -> | mysql              |
+    -> | new_schema         |
+    -> | nike               |
+    -> | pb1                |
+    -> | performance_schema |
+    -> | practise           |
+    -> | prashant007        |
+    -> | prashantcare       |
+    -> | prashantcustomer1  |
+    -> | prashantcustomer2  |
+    -> | prashantdb1        |
+    -> | prathamesh         |
+    -> | project            |
+    -> | q1                 |
+    -> | sales              |
+    -> | sam                |
+    -> | sample_db          |
+    -> | samuel             |
+    -> | saurabh            |
+    -> | saurabhh           |
+    -> | schema             |
+    -> | school             |
+    -> | series             |
+    -> | shield             |
+    -> | shra26             |
+    -> | shraddha           |
+    -> | t202               |
+    -> | test1              |
+    -> | world              |
+    -> +--------------------+
+    -> 48 rows in set (0.00 sec)
+    ->
+    -> mysql> use t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+
+| Database           |
++--------------------+
+| abc      ' at line 1
+mysql> Database changed
+    -> mysql> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Database changed
+mysql> show tables' at line 1
+mysql> +----------------+
+    -> | Tables_in_t202 |
+    -> +----------------+
+    -> | t202           |
+    -> +----------------+
+    -> 1 row in set (0.00 sec)
+    ->
+    -> mysql> desc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+----------------+
+| Tables_in_t202 |
++----------------+
+| t202           |
++---' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    -> mysql> desc
+    ->     -> describe t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'the manual that corresponds to your MySQL server version for the right syntax to' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'describe t202' at line 2
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    -> mysql> create table t202(id int,name varchar(10),branch varchar(5),marks float);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'the manual that corresponds to your MySQL server version for the right syntax to' at line 1
+mysql> ERROR 1050 (42S01): Table 't202' already exists
+    -> mysql> describe t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1050 (42S01): Table 't202' already exists
+mysql> describe t202' at line 1
+mysql> +--------+-------------+------+-----+---------+-------+
+    -> | Field  | Type        | Null | Key | Default | Extra |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> | id     | int         | YES  |     | NULL    |       |
+    -> | Name   | varchar(10) | YES  |     | NULL    |       |
+    -> | Branch | varchar(5)  | YES  |     | NULL    |       |
+    -> | Marks  | float       | YES  |     | NULL    |       |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> 4 rows in set (0.01 sec)
+    ->
+    -> mysql> create table emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------+-------------+------+-----+---------+-------+
+| Field  | Type        |' at line 1
+mysql> ERROR 4028 (HY000): A table must have at least one visible column.
+    -> mysql> show databses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> show d' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databses' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    -> mysql> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'the manual that corresponds to your MySQL server version for the right syntax to' at line 1
+mysql> +--------------------+
+    -> | Database           |
+    -> +--------------------+
+    -> | abc                |
+    -> | ashh               |
+    -> | college            |
+    -> | cricket            |
+    -> | dairy              |
+    -> | details            |
+    -> | easy               |
+    -> | emp                |
+    -> | emp1               |
+    -> | emp_db             |
+    -> | emp_db2            |
+    -> | equi               |
+    -> | forms              |
+    -> | groovingsync       |
+    -> | id                 |
+    -> | information_schema |
+    -> | joins              |
+    -> | kratos             |
+    -> | mansi              |
+    -> | mysql              |
+    -> | new_schema         |
+    -> | nike               |
+    -> | pb1                |
+    -> | performance_schema |
+    -> | practise           |
+    -> | prashant007        |
+    -> | prashantcare       |
+    -> | prashantcustomer1  |
+    -> | prashantcustomer2  |
+    -> | prashantdb1        |
+    -> | prathamesh         |
+    -> | project            |
+    -> | q1                 |
+    -> | sales              |
+    -> | sam                |
+    -> | sample_db          |
+    -> | samuel             |
+    -> | saurabh            |
+    -> | saurabhh           |
+    -> | schema             |
+    -> | school             |
+    -> | series             |
+    -> | shield             |
+    -> | shra26             |
+    -> | shraddha           |
+    -> | t202               |
+    -> | test1              |
+    -> | world              |
+    -> +--------------------+
+    -> 48 rows in set (0.00 sec)
+    ->
+    -> mysql> use t202;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------------------+
+| Database           |
++--------------------+
+| abc      ' at line 1
+mysql> Database changed
+    -> mysql> create table emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Database changed
+mysql> create table emp' at line 1
+mysql> ERROR 4028 (HY000): A table must have at least one visible column.
+    -> mysql> create table emp(id int,name varchar(33),dept varchar(12),salary int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create' at line 1
+mysql> Query OK, 0 rows affected (0.01 sec)
+    ->
+    -> mysql> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables' at line 1
+mysql> +----------------+
+    -> | Tables_in_t202 |
+    -> +----------------+
+    -> | emp            |
+    -> | t202           |
+    -> +----------------+
+    -> 2 rows in set (0.00 sec)
+    ->
+    -> mysql> describe emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+----------------+
+| Tables_in_t202 |
++----------------+
+| emp            |
+| t2' at line 1
+mysql> +--------+-------------+------+-----+---------+-------+
+    -> | Field  | Type        | Null | Key | Default | Extra |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> | id     | int         | YES  |     | NULL    |       |
+    -> | name   | varchar(33) | YES  |     | NULL    |       |
+    -> | dept   | varchar(12) | YES  |     | NULL    |       |
+    -> | salary | int         | YES  |     | NULL    |       |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> 4 rows in set (0.00 sec)
+    ->
+    -> mysql> desc emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+--------+-------------+------+-----+---------+-------+
+| Field  | Type        |' at line 1
+mysql> +--------+-------------+------+-----+---------+-------+
+    -> | Field  | Type        | Null | Key | Default | Extra |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> | id     | int         | YES  |     | NULL    |       |
+    -> | name   | varchar(33) | YES  |     | NULL    |       |
+    -> | dept   | varchar(12) | YES  |     | NULL    |       |
+    -> | salary | int         | YES  |     | NULL    |       |
+    -> +--------+-------------+------+-----+---------+-------+
+    -> 4 rows in set (0.00 sec)
+    ->
+    -> mysql>^C
+mysql>
