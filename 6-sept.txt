@@ -1,0 +1,670 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.34 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| ashh               |
+| college            |
+| cricket            |
+| dairy              |
+| details            |
+| easy               |
+| emp                |
+| emp1               |
+| emp_db             |
+| emp_db2            |
+| equi               |
+| forms              |
+| groovingsync       |
+| id                 |
+| information_schema |
+| joins              |
+| kratos             |
+| mansi              |
+| mysql              |
+| new_schema         |
+| nike               |
+| office             |
+| office123          |
+| office_ofice       |
+| pb1                |
+| performance_schema |
+| practise           |
+| prashant007        |
+| prashantcare       |
+| prashantcustomer1  |
+| prashantcustomer2  |
+| prashantdb1        |
+| prathamesh         |
+| project            |
+| q1                 |
+| sales              |
+| sam                |
+| sample_db          |
+| samuel             |
+| saurabh            |
+| saurabhh           |
+| schema             |
+| school             |
+| series             |
+| shield             |
+| shra26             |
+| shraddha           |
+| t202               |
+| test1              |
+| world              |
++--------------------+
+51 rows in set (0.14 sec)
+
+mysql> use t202;
+Database changed
+mysql> select lower ("HEELLO");
++------------------+
+| lower ("HEELLO") |
++------------------+
+| heello           |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> select *from student;
++------+--------+--------+---------+------------+
+| id   | name   | branch | percent | dob        |
++------+--------+--------+---------+------------+
+|    1 | amit   | civil  |   55.67 | 2001-05-23 |
+|    2 | suraj  | comp   |   67.89 | 2002-06-12 |
+|    3 | sham   | elec   |   78.99 | 2004-07-13 |
+|    4 | yash   | IT     |   73.90 | 2004-02-28 |
+|    5 | sunny  | bsc    |    0.00 | 2014-11-11 |
+|    6 | omm    | civil  |   55.67 | 1999-01-01 |
+|    7 | divesh | comp   |   45.77 | 1995-07-08 |
+|    8 | horun  | comp   |   45.07 | 1995-07-08 |
+|    9 | tejal  | NULL   |   66.45 | NULL       |
+|   10 | lokesh | NULL   |   60.50 | NULL       |
++------+--------+--------+---------+------------+
+10 rows in set (0.01 sec)
+
+mysql> select * from student where  name='amit';
++------+------+--------+---------+------------+
+| id   | name | branch | percent | dob        |
++------+------+--------+---------+------------+
+|    1 | amit | civil  |   55.67 | 2001-05-23 |
++------+------+--------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> select upper('bye');
++--------------+
+| upper('bye') |
++--------------+
+| BYE          |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select id , name, upper(name)from student;
++------+--------+-------------+
+| id   | name   | upper(name) |
++------+--------+-------------+
+|    1 | amit   | AMIT        |
+|    2 | suraj  | SURAJ       |
+|    3 | sham   | SHAM        |
+|    4 | yash   | YASH        |
+|    5 | sunny  | SUNNY       |
+|    6 | omm    | OMM         |
+|    7 | divesh | DIVESH      |
+|    8 | horun  | HORUN       |
+|    9 | tejal  | TEJAL       |
+|   10 | lokesh | LOKESH      |
++------+--------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select tittle,upper(tittle),lower (tittle)from student;
+ERROR 1054 (42S22): Unknown column 'tittle' in 'field list'
+mysql> select concat('hello','','all');
++--------------------------+
+| concat('hello','','all') |
++--------------------------+
+| helloall                 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++------+--------+--------+---------+------------+
+| id   | name   | branch | percent | dob        |
++------+--------+--------+---------+------------+
+|    1 | amit   | civil  |   55.67 | 2001-05-23 |
+|    2 | suraj  | comp   |   67.89 | 2002-06-12 |
+|    3 | sham   | elec   |   78.99 | 2004-07-13 |
+|    4 | yash   | IT     |   73.90 | 2004-02-28 |
+|    5 | sunny  | bsc    |    0.00 | 2014-11-11 |
+|    6 | omm    | civil  |   55.67 | 1999-01-01 |
+|    7 | divesh | comp   |   45.77 | 1995-07-08 |
+|    8 | horun  | comp   |   45.07 | 1995-07-08 |
+|    9 | tejal  | NULL   |   66.45 | NULL       |
+|   10 | lokesh | NULL   |   60.50 | NULL       |
++------+--------+--------+---------+------------+
+10 rows in set (0.00 sec)
+
+mysql> studentid,studentname,studentpercent
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'studentid,studentname,studentpercent' at line 1
+mysql> select id as  studentid, name as studnetname from student;
++-----------+-------------+
+| studentid | studnetname |
++-----------+-------------+
+|         1 | amit        |
+|         2 | suraj       |
+|         3 | sham        |
+|         4 | yash        |
+|         5 | sunny       |
+|         6 | omm         |
+|         7 | divesh      |
+|         8 | horun       |
+|         9 | tejal       |
+|        10 | lokesh      |
++-----------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from student;
++------+--------+--------+---------+------------+
+| id   | name   | branch | percent | dob        |
++------+--------+--------+---------+------------+
+|    1 | amit   | civil  |   55.67 | 2001-05-23 |
+|    2 | suraj  | comp   |   67.89 | 2002-06-12 |
+|    3 | sham   | elec   |   78.99 | 2004-07-13 |
+|    4 | yash   | IT     |   73.90 | 2004-02-28 |
+|    5 | sunny  | bsc    |    0.00 | 2014-11-11 |
+|    6 | omm    | civil  |   55.67 | 1999-01-01 |
+|    7 | divesh | comp   |   45.77 | 1995-07-08 |
+|    8 | horun  | comp   |   45.07 | 1995-07-08 |
+|    9 | tejal  | NULL   |   66.45 | NULL       |
+|   10 | lokesh | NULL   |   60.50 | NULL       |
++------+--------+--------+---------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select replace ('let us learn','learn','earn !!!');
++---------------------------------------------+
+| replace ('let us learn','learn','earn !!!') |
++---------------------------------------------+
+| let us earn !!!                             |
++---------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select replace ('let us play cricket','play cricket','not play criciket !!!');
++------------------------------------------------------------------------+
+| replace ('let us play cricket','play cricket','not play criciket !!!') |
++------------------------------------------------------------------------+
+| let us not play criciket !!!                                           |
++------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++------+--------+--------+---------+------------+
+| id   | name   | branch | percent | dob        |
++------+--------+--------+---------+------------+
+|    1 | amit   | civil  |   55.67 | 2001-05-23 |
+|    2 | suraj  | comp   |   67.89 | 2002-06-12 |
+|    3 | sham   | elec   |   78.99 | 2004-07-13 |
+|    4 | yash   | IT     |   73.90 | 2004-02-28 |
+|    5 | sunny  | bsc    |    0.00 | 2014-11-11 |
+|    6 | omm    | civil  |   55.67 | 1999-01-01 |
+|    7 | divesh | comp   |   45.77 | 1995-07-08 |
+|    8 | horun  | comp   |   45.07 | 1995-07-08 |
+|    9 | tejal  | NULL   |   66.45 | NULL       |
+|   10 | lokesh | NULL   |   60.50 | NULL       |
++------+--------+--------+---------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select branch ,replace(branch,'dept','department')from student;
++--------+-------------------------------------+
+| branch | replace(branch,'dept','department') |
++--------+-------------------------------------+
+| civil  | civil                               |
+| comp   | comp                                |
+| elec   | elec                                |
+| IT     | IT                                  |
+| bsc    | bsc                                 |
+| civil  | civil                               |
+| comp   | comp                                |
+| comp   | comp                                |
+| NULL   | NULL                                |
+| NULL   | NULL                                |
++--------+-------------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> upadate student set branch-replace(branch,'dept','department')from student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'upadate student set branch-replace(branch,'dept','department')from student' at line 1
+mysql> update student set branch-replace(branch,'dept','department')from student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-replace(branch,'dept','department')from student' at line 1
+mysql> update student set branch=replace(branch,'dept','department')from student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from student' at line 1
+mysql> update student set branch = replace(branch,'dept','department')from student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from student' at line 1
+mysql> update student set branch = replace(branch,'dept','department')from student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from student' at line 1
+mysql> select substr('welcome'3);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3)' at line 1
+mysql> select substr('welcome'2);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2)' at line 1
+mysql> select substr('welcome',2);
++---------------------+
+| substr('welcome',2) |
++---------------------+
+| elcome              |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select substr('hello',4);
++-------------------+
+| substr('hello',4) |
++-------------------+
+| lo                |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select substr('welcome',3,2);
++-----------------------+
+| substr('welcome',3,2) |
++-----------------------+
+| lc                    |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> select trim('hello     all    ');
++---------------------------+
+| trim('hello     all    ') |
++---------------------------+
+| hello     all             |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> select length (12344,2423542);
+ERROR 1582 (42000): Incorrect parameter count in the call to native function 'length'
+mysql> select length(12344);
++---------------+
+| length(12344) |
++---------------+
+|             5 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select length(12344,6543);
+ERROR 1582 (42000): Incorrect parameter count in the call to native function 'length'
+mysql> select abs(-345.65);
++--------------+
+| abs(-345.65) |
++--------------+
+|       345.65 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select round(3456.65);
++----------------+
+| round(3456.65) |
++----------------+
+|           3457 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select round(34567.2345,2);
++---------------------+
+| round(34567.2345,2) |
++---------------------+
+|            34567.23 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(34567.2345,-2);
++----------------------+
+| round(34567.2345,-2) |
++----------------------+
+|                34600 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(34567.2345,-8);
++----------------------+
+| round(34567.2345,-8) |
++----------------------+
+|                    0 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(34567.2345,-4);
++----------------------+
+| round(34567.2345,-4) |
++----------------------+
+|                30000 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(34567.2345,-5);
++----------------------+
+| round(34567.2345,-5) |
++----------------------+
+|                    0 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(34567.2345,2);
++---------------------+
+| round(34567.2345,2) |
++---------------------+
+|            34567.23 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select truncate(3454.43453,-2);
++-------------------------+
+| truncate(3454.43453,-2) |
++-------------------------+
+|                    3400 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select ceil(258.12);
++--------------+
+| ceil(258.12) |
++--------------+
+|          259 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select floor(258.12);
++---------------+
+| floor(258.12) |
++---------------+
+|           258 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select ceil(258.12);
++--------------+
+| ceil(258.12) |
++--------------+
+|          259 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select sqrt(2);
++--------------------+
+| sqrt(2)            |
++--------------------+
+| 1.4142135623730951 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select sqrt(100);
++-----------+
+| sqrt(100) |
++-----------+
+|        10 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select sqrt(200);
++--------------------+
+| sqrt(200)          |
++--------------------+
+| 14.142135623730951 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select pow(5,2);
++----------+
+| pow(5,2) |
++----------+
+|       25 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select pow(5,3);
++----------+
+| pow(5,3) |
++----------+
+|      125 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select rand();
++-------------------+
+| rand()            |
++-------------------+
+| 0.304605934121279 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select floor( rand()*47857);
++----------------------+
+| floor( rand()*47857) |
++----------------------+
+|                 1497 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select ceil( rand()*47857);
++---------------------+
+| ceil( rand()*47857) |
++---------------------+
+|               11614 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select sysdate();
++---------------------+
+| sysdate()           |
++---------------------+
+| 2024-09-06 16:37:44 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select curdate();
++------------+
+| curdate()  |
++------------+
+| 2024-09-06 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_t202 |
++----------------+
+| emp            |
+| student        |
+| t202           |
++----------------+
+3 rows in set (0.02 sec)
+
+mysql> use student;
+ERROR 1049 (42000): Unknown database 'student'
+mysql> select * from student;
++------+--------+--------+---------+------------+
+| id   | name   | branch | percent | dob        |
++------+--------+--------+---------+------------+
+|    1 | amit   | civil  |   55.67 | 2001-05-23 |
+|    2 | suraj  | comp   |   67.89 | 2002-06-12 |
+|    3 | sham   | elec   |   78.99 | 2004-07-13 |
+|    4 | yash   | IT     |   73.90 | 2004-02-28 |
+|    5 | sunny  | bsc    |    0.00 | 2014-11-11 |
+|    6 | omm    | civil  |   55.67 | 1999-01-01 |
+|    7 | divesh | comp   |   45.77 | 1995-07-08 |
+|    8 | horun  | comp   |   45.07 | 1995-07-08 |
+|    9 | tejal  | NULL   |   66.45 | NULL       |
+|   10 | lokesh | NULL   |   60.50 | NULL       |
++------+--------+--------+---------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, date_format (dob,'%d/%m/%y')from student;
++------------+------------------------------+
+| dob        | date_format (dob,'%d/%m/%y') |
++------------+------------------------------+
+| 2001-05-23 | 23/05/01                     |
+| 2002-06-12 | 12/06/02                     |
+| 2004-07-13 | 13/07/04                     |
+| 2004-02-28 | 28/02/04                     |
+| 2014-11-11 | 11/11/14                     |
+| 1999-01-01 | 01/01/99                     |
+| 1995-07-08 | 08/07/95                     |
+| 1995-07-08 | 08/07/95                     |
+| NULL       | NULL                         |
+| NULL       | NULL                         |
++------------+------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, date_format (dob,'%d/%M/%y')from student;
++------------+------------------------------+
+| dob        | date_format (dob,'%d/%M/%y') |
++------------+------------------------------+
+| 2001-05-23 | 23/May/01                    |
+| 2002-06-12 | 12/June/02                   |
+| 2004-07-13 | 13/July/04                   |
+| 2004-02-28 | 28/February/04               |
+| 2014-11-11 | 11/November/14               |
+| 1999-01-01 | 01/January/99                |
+| 1995-07-08 | 08/July/95                   |
+| 1995-07-08 | 08/July/95                   |
+| NULL       | NULL                         |
+| NULL       | NULL                         |
++------------+------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, date_format (dob,'%d/%M/%Y')from student;
++------------+------------------------------+
+| dob        | date_format (dob,'%d/%M/%Y') |
++------------+------------------------------+
+| 2001-05-23 | 23/May/2001                  |
+| 2002-06-12 | 12/June/2002                 |
+| 2004-07-13 | 13/July/2004                 |
+| 2004-02-28 | 28/February/2004             |
+| 2014-11-11 | 11/November/2014             |
+| 1999-01-01 | 01/January/1999              |
+| 1995-07-08 | 08/July/1995                 |
+| 1995-07-08 | 08/July/1995                 |
+| NULL       | NULL                         |
+| NULL       | NULL                         |
++------------+------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, date_format (dob,'%D/%M/%Y')from student;
++------------+------------------------------+
+| dob        | date_format (dob,'%D/%M/%Y') |
++------------+------------------------------+
+| 2001-05-23 | 23rd/May/2001                |
+| 2002-06-12 | 12th/June/2002               |
+| 2004-07-13 | 13th/July/2004               |
+| 2004-02-28 | 28th/February/2004           |
+| 2014-11-11 | 11th/November/2014           |
+| 1999-01-01 | 1st/January/1999             |
+| 1995-07-08 | 8th/July/1995                |
+| 1995-07-08 | 8th/July/1995                |
+| NULL       | NULL                         |
+| NULL       | NULL                         |
++------------+------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, date_format (dob,'%D-%M-%Y')from student;
++------------+------------------------------+
+| dob        | date_format (dob,'%D-%M-%Y') |
++------------+------------------------------+
+| 2001-05-23 | 23rd-May-2001                |
+| 2002-06-12 | 12th-June-2002               |
+| 2004-07-13 | 13th-July-2004               |
+| 2004-02-28 | 28th-February-2004           |
+| 2014-11-11 | 11th-November-2014           |
+| 1999-01-01 | 1st-January-1999             |
+| 1995-07-08 | 8th-July-1995                |
+| 1995-07-08 | 8th-July-1995                |
+| NULL       | NULL                         |
+| NULL       | NULL                         |
++------------+------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, year(dob)from student;
++------------+-----------+
+| dob        | year(dob) |
++------------+-----------+
+| 2001-05-23 |      2001 |
+| 2002-06-12 |      2002 |
+| 2004-07-13 |      2004 |
+| 2004-02-28 |      2004 |
+| 2014-11-11 |      2014 |
+| 1999-01-01 |      1999 |
+| 1995-07-08 |      1995 |
+| 1995-07-08 |      1995 |
+| NULL       |      NULL |
+| NULL       |      NULL |
++------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, day(dob)from student;
++------------+----------+
+| dob        | day(dob) |
++------------+----------+
+| 2001-05-23 |       23 |
+| 2002-06-12 |       12 |
+| 2004-07-13 |       13 |
+| 2004-02-28 |       28 |
+| 2014-11-11 |       11 |
+| 1999-01-01 |        1 |
+| 1995-07-08 |        8 |
+| 1995-07-08 |        8 |
+| NULL       |     NULL |
+| NULL       |     NULL |
++------------+----------+
+10 rows in set (0.00 sec)
+
+mysql> select dob, month(dob)from student;
++------------+------------+
+| dob        | month(dob) |
++------------+------------+
+| 2001-05-23 |          5 |
+| 2002-06-12 |          6 |
+| 2004-07-13 |          7 |
+| 2004-02-28 |          2 |
+| 2014-11-11 |         11 |
+| 1999-01-01 |          1 |
+| 1995-07-08 |          7 |
+| 1995-07-08 |          7 |
+| NULL       |       NULL |
+| NULL       |       NULL |
++------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select datediff(now(),'2000-09-06');
++------------------------------+
+| datediff(now(),'2000-09-06') |
++------------------------------+
+|                         8766 |
++------------------------------+
+1 row in set (0.01 sec)
+
+mysql> select datediff(now(),'2024-09-02');
++------------------------------+
+| datediff(now(),'2024-09-02') |
++------------------------------+
+|                            4 |
++------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select datediff(now(),'2000-09-16');
++------------------------------+
+| datediff(now(),'2000-09-16') |
++------------------------------+
+|                         8756 |
++------------------------------+
+1 row in set (0.00 sec)
+
+mysql>
